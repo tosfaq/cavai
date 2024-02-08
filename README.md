@@ -30,6 +30,11 @@ python cavai_det.py --series <path to series to open> --labels <path to json fil
 
 You can also type `python cavai2.py -h` for help.
 
+## To-do
+
+- [ ] Add keybinds to README
+- [ ] Ability to choose keybinds
+
 ## Contact
 
 scenic-00airs \<at\> icloud \<dot\> com
