@@ -39,6 +39,29 @@ You can also type `python cavai.py -h` for help.
 - To remove a box, put your cursor on the box border and click `RightMouseButton`. 
 - Use `Space` to interpolate with 2 boxes selected.
 
+## Internal representation of labels
+
+The program uses JSON format for saving and loading labels:
+
+```
+{
+    "img_size": 512,
+    "labels": {
+        "ct_lungs_artefacts_71_1/031/10000000/10000001/10000007": {
+            "13": { 
+                "filename": "10000001",
+                "bboxes": [[0, start_x, start_y, end_x, end_y],
+                           [0, start_x, start_y, end_x, end_y]]
+            }
+        }
+    }
+}
+```
+
+13 is an index of a slice.
+
+> Currently viewer relies on the folder structure as above (a series folder has 3 more subfolders inside). You can adjust `get_folder_key` function for your needs.
+
 ## To-do
 
 - [ ] Functionality to choose keybinds
