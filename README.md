@@ -3,7 +3,7 @@ CAVAI (CT Annotation, Viewing, and Analyzing Instrument) is a tool designed for 
 
 ## Features
 
-- Per-slice series labeling for classification (multiclass/multilabel)
+- Per-slice series labeling for classification (multiclass/multilabel) *(not maintained anymore)*
 - Per-slice series labeling for detection
 - Linear interpolation for bounding boxes
 - Saving and loading checkpoints
@@ -13,6 +13,8 @@ CAVAI (CT Annotation, Viewing, and Analyzing Instrument) is a tool designed for 
 
 ## Installation
 
+> Tip: use a python venv
+
 ```
 cd cavai
 pip install -r ./requirements.txt
@@ -20,20 +22,26 @@ pip install -r ./requirements.txt
 
 ## Usage
 
-The repository contains 2 files: `cavai.py` for classification and `cavai_det.py` for detection.
+The repository contains 2 files: `cavai.py` for detection and `cavai_clf.py` for classification *(not maintained anymore)*.
 
-The example below uses `cavai_det.py`.
+The example below uses `cavai.py`.
 
 ```
-python cavai_det.py --series <path to series to open> --labels <path to json file with per-series labeling> --checkpoint <path to json file with CAVAI checkpoint> <path to JSON output checkpoint>
+python cavai.py --series <path to series to open> --labels <path to json file with per-series labeling> --checkpoint <path to json file with CAVAI checkpoint> <path to JSON output checkpoint>
 ```
 
-You can also type `python cavai2.py -h` for help.
+You can also type `python cavai.py -h` for help.
+
+## Keybindings
+
+- Use your mouse wheel to scroll through the slices. You can also use `LeftArrow`/`a` and `RightArrow`/`d`
+- Put your cursor exactly on the box border and click `Control`+`RightMouseButton` to select first interpolation box. Scroll a few slices and select second interpolation box by hovering on the box border and clicking `Option`+`RightMouseButton`.
+- To remove a box, put your cursor on the box border and click `RightMouseButton`. 
+- Use `Space` to interpolate with 2 boxes selected.
 
 ## To-do
 
-- [ ] Add keybinds to README
-- [ ] Ability to choose keybinds
+- [ ] Functionality to choose keybinds
 
 ## Contact
 
